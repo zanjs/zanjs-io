@@ -6,6 +6,7 @@
     <i class="fa fa-heart"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">{{ config.author }}</span>
+   <a href="http://www.miitbeian.gov.cn/">沪ICP备15000369号-2</a>
 </div>
 
 <div class="powered-by">
