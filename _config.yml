@@ -3,14 +3,14 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: 	zanjs 前端补刀 一点心怡 | 前端娃
+title: 一点心怡 | 前端娃
 subtitle: 精于心, 简于形, 说前端
 description: 一米阳光下，一本书，一个人，思念昉~
 author: Julian
 language: zh-Hans
 timezone:
 
-avatar: https://avatars2.githubusercontent.com/u/12947276?v=3&s=460
+avatar: https://avatars0.githubusercontent.com/u/12947276?v=3&u=b5243b88f15147a53dc05609982089fc63da9412&s=400
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
 url: http://zanjs.com
