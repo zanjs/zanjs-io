@@ -10,7 +10,7 @@ categories:
 
 ### 问题
 
-在 `Linux` 系统下 npm 安装报错 没用权限
+在 `Linux` 系统下 npm 安装报错 没有权限
 
 ```
 root@zan:~# npm install spy-debugger -g
