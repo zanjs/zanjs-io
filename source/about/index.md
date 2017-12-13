@@ -142,7 +142,7 @@ tags:
 ```js
 const User = {
   Name: 'Julian',
-  Six: '男',
+  Sex: '男',
   Email: 'Anlasheng@gmail.com',
   WeiXin: '15000003499',
   QQ: '11360517'
