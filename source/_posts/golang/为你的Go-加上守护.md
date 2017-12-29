@@ -14,10 +14,22 @@ categories:
 
 [官网地址](http://supervisord.org/index.html)
 
+
+CentOS install
+
 ```bash
-sudo yum install python-setuptools
-sudo easy_install supervisor
+yum install python-setuptools
+easy_install supervisor
 ```
+
+Ubuntu install
+
+```
+apt-get install supervisor
+```
+
+通过这种方式安装后，自动设置为开机启动
+
 
 安装成功后 生成配置文件
 
@@ -36,6 +48,7 @@ demo.conf
 ```
 [program:demo]
 user=root
+directory=/root/Applications/go/bin/
 command=/root/Applications/go/bin/demo_linux_amd64
 autostart=true
 autorestart=true
@@ -55,6 +68,7 @@ stopsignal=INT
 ### 说明
 
 
+`directory`：程序的启动目录。
 `command`：表示运行的命令，我这是填写的我 `demo` 安装包的原则路径。
 `autostart`：表示是否跟随 `supervisor`一起启动。
 `autorestart`：如果该程序挂了，是否重新启动。
@@ -102,7 +116,7 @@ $ unlink /***/supervisor.sock
 再次执行 `/usr/bin/supervisord -c /etc/supervisord.conf`
 
 
-## 查看状态
+## 查看正在守候的进程状态
 
 ```
 supervisorctl
@@ -110,7 +124,20 @@ supervisorctl
 
 ## 手动关闭
 
-先关闭 `supervisor` 启动脚本
+
+停止某一进程 (program_name=你配置中写的程序名称)
+
+```
+/usr/bin/supervisorctl stop program_name
+```
+
+重启某一进程 (program_name=你配置中写的程序名称)
+
+```
+/usr/bin/supervisorctl restart program_name
+```
+
+停止全部进程
 
 ```
 /usr/bin/supervisorctl stop all
@@ -120,6 +147,20 @@ supervisorctl
 
 ```
 kill pid supervisordID
+```
+
+## 更新
+
+更新新的配置到 `supervisord `
+
+```
+/usr/bin/supervisorctl update
+```
+
+重新启动配置中的所有程序 
+
+```
+/usr/bin/supervisorctl reload 
 ```
 
 ## 手动启动
