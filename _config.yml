@@ -71,7 +71,7 @@ theme: next
 deploy:
   type: git
   # git 仓库的地址。git@github.com:zanjs/zanjs.github.io.git
-  repo: https://github.com/zanjs/zanjs.github.io.git
+  repo: git@github.com:zanjs/zanjs.github.io.git
   # 分支名称。
   branch: master
 
