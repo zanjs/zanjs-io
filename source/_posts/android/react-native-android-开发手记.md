@@ -29,3 +29,16 @@ Error:Execution failed for task ':app:processDebugManifest'.
 
 [参考官方文档](https://developer.android.com/studio/build/manifest-merge.html)
 
+
+## package server
+
+```
+'react-native run-android' command. And I got the error on emulator "Unable to load script from assets 'index.android.bundle'.Make sure your bundle is packaged correctly or you are running a package server."
+```
+
+
+1. `mkdir android/app/src/main/assets`
+
+2. `react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res`
+
+3. `react-native run-android`
