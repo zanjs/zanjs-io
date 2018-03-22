@@ -42,3 +42,49 @@ Error:Execution failed for task ':app:processDebugManifest'.
 2. `react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res`
 
 3. `react-native run-android`
+
+
+## react-native-image-crop-picker react-link
+
+```
+* What went wrong:
+A problem occurred configuring project ':app'.
+> Could not resolve all dependencies for configuration ':app:_debugApk'.
+   > A problem occurred configuring project ':react-native-image-crop-picker'.
+      > Could not resolve all dependencies for configuration ':react-native-image-crop-picker:_debugPublishCopy'.
+         > Could not find com.github.yalantis:ucrop:2.2.1-native.
+           Required by:
+               taiZhouTouTiao:react-native-image-crop-picker:unspecified
+```
+
+
+编辑 `build.gradle` 文件 修改如下:
+
+```gradle
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:2.2.3'
+
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+allprojects {
+    repositories {
+        mavenLocal()
+        jcenter()
+        maven { url "https://jitpack.io" }
+        maven {
+            // All of React Native (JS, Obj-C sources, Android binaries) is installed from npm
+            url "$rootDir/../node_modules/react-native/android"
+        }
+    }
+}
+
+```
