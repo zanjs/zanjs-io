@@ -31,6 +31,7 @@ menu:
   home: /
   categories: /categories
   about: /about
+  hongbao: /hongbao
   archives: /archives
   tags: /tags
   commonweal: /404.html
@@ -46,6 +47,7 @@ menu_icons:
   #KeyMapsToMenuItemKey: NameOfTheIconFromFontAwesome
   home: home
   about: user
+  hongbao: tags
   categories: th
   tags: tags
   archives: archive
